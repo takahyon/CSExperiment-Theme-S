@@ -79,9 +79,9 @@ Program Memory  [Origin = 0x100, Length = 0x3f00]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x100                0xce           0x135  (309)
-.text                        0x1ce                0x46            0x69  (105)
+.text                        0x1ce                0x3a            0x57  (87)
 
-                 Total program memory used (bytes):          0x19e  (414) 1%
+                 Total program memory used (bytes):          0x18c  (396) 1%
 
 
 Ivt Memory  [Origin = 0x4, Length = 0x7c]
@@ -116,7 +116,7 @@ External Symbols in Program Memory (by address):
                   0x000152                  __data_init
                   0x0001c8                  __DefaultInterrupt
                   0x0001ce                  _Wait1S
-                  0x00020e                  _main
+                  0x0001e4                  _main
                   0xf8000a                  __FGS.sec
 
 External Symbols in Program Memory (by name):
@@ -128,7 +128,7 @@ External Symbols in Program Memory (by name):
                   0x000152                  __data_init_standard
                   0x00013c                  __psv_init
                   0x000100                  __resetPRI
-                  0x00020e                  _main
+                  0x0001e4                  _main
 
 Memory Configuration
 
@@ -261,22 +261,26 @@ userdata
 .comment
  *(.comment)
 
-.debug_info       0x000000        0x15e
+.debug_info       0x000000        0x2f5
  *(.debug_info)
- .debug_info      0x000000        0x15e build/default/debug/newmain.o
+ .debug_info      0x000000        0x2f5 build/default/debug/newmain.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000         0x6d
+.debug_abbrev     0x000000         0xd4
  *(.debug_abbrev)
- .debug_abbrev    0x000000         0x6d build/default/debug/newmain.o
+ .debug_abbrev    0x000000         0xd4 build/default/debug/newmain.o
 
-.debug_line       0x000000         0x95
+.debug_line       0x000000         0x99
  *(.debug_line)
- .debug_line      0x000000         0x95 build/default/debug/newmain.o
+ .debug_line      0x000000         0x99 build/default/debug/newmain.o
 
 .debug_frame      0x000000         0x4c
  *(.debug_frame)
  .debug_frame     0x000000         0x4c build/default/debug/newmain.o
+
+.debug_str        0x000000         0x13
+ *(.debug_str)
+ .debug_str       0x000000         0x13 build/default/debug/newmain.o
 
 .debug_loc
  *(.debug_loc)
@@ -659,20 +663,20 @@ LOAD FGS
 LOAD default_isr
 
 .debug_pubtypes
-                  0x000018         0x12
+                  0x000018         0x4e
  .debug_pubtypes
-                  0x000018         0x12 build/default/debug/newmain.o
+                  0x000018         0x4e build/default/debug/newmain.o
 
 __c30_signature
-                  0x00002a         0x12
+                  0x000066         0x12
  __c30_signature
-                  0x00002a          0x6 build/default/debug/newmain.o
+                  0x000066          0x6 build/default/debug/newmain.o
  __c30_signature
-                  0x000030          0x6 /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(crt0_standard.o)
+                  0x00006c          0x6 /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000036          0x6 /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(data_init_standard.o)
+                  0x000072          0x6 /Applications/microchip/xc16/v1.32/bin/bin/../../lib/liblega-pic30-elf.a(data_init_standard.o)
 
-.text             0x0001ce         0x46
- .text            0x0001ce         0x46 build/default/debug/newmain.o
+.text             0x0001ce         0x3a
+ .text            0x0001ce         0x3a build/default/debug/newmain.o
                   0x0001ce                  _Wait1S
-                  0x00020e                  _main
+                  0x0001e4                  _main
